@@ -236,8 +236,16 @@ The harry Potter movies included with the data are Harry Potter and the Chamber 
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
+long_highrated_comedies_animation <- movies %>%
 
+filter(Comedy == 1 | Animation == 1, votes > 100 ) %>%
+select(title, budget, votes) %>%
+arrange(desc(budget))
+
+long_highrated_comedies_animation
 ```
+
+The highest budget for a movie that is animated or comedy is Wild Wild West with a budget of $170,0000,000 and 19,078 votes.
 
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
